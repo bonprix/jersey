@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.FormParam;
@@ -77,6 +78,11 @@ public interface MyResourceIfc {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     String getByNameMatrix(@MatrixParam("matrix-name") String name);
+
+    @Path("bean")
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    String getByBean(@BeanParam MyBeanParam bean);
 
     @Path("form")
     @POST
